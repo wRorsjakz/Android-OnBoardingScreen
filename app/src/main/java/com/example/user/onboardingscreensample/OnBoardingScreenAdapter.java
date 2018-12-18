@@ -39,14 +39,16 @@ public class OnBoardingScreenAdapter extends PagerAdapter {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
     };
 
-    @Override
-    public int getCount() {
-        return titles.length;
-    }
+
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
         return view == o;
+    }
+
+    @Override
+    public int getCount() {
+        return titles.length;
     }
 
     @NonNull
@@ -59,21 +61,13 @@ public class OnBoardingScreenAdapter extends PagerAdapter {
         textViewTitle = view.findViewById(R.id.onboarding_title_id);
         textViewDescription = view.findViewById(R.id.onboarding_description_id);
 
-        setViews(position);
-        container.addView(view);
-
-        return view;
-    }
-
-    /**
-     * Displays resources (icons,title and description) for the respective views according to position
-     * of onBoardingScreen
-     * @param position
-     */
-    private void setViews(int position){
         imageViewIcon.setImageResource(icons[position]);
         textViewTitle.setText(titles[position]);
         textViewDescription.setText(descriptions[position]);
+
+        container.addView(view);
+
+        return view;
     }
 
     @Override
