@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         // Adds dots to the textview array in translucent white (unselected color)
         for (int i = 0; i < noOfSlides; i++){
             dots[i] = new TextView(this);
+            //Min api is 24
             dots[i].setText(Html.fromHtml("&#8226",noOfSlides));
             dots[i].setTextSize(35);
             dots[i].setTextColor(ContextCompat.getColor(this,R.color.colorTranslucentWhite));
@@ -123,7 +124,6 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 backButton.setText(getString(R.string.back));
                 backButton.setEnabled(true);
             }
-
         }
 
         @Override
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 if (buttonText.equals(this.getResources().getString(R.string.next))){
                     viewPager.setCurrentItem(currentScreenIndex + 1,true);
                 }
-                else if (buttonText == getString(R.string.finish)){
+                else if (buttonText.equals(this.getResources().getString(R.string.finish))){
                     Toast.makeText(this, "Finish Pressed", Toast.LENGTH_SHORT).show();
                 }
                 break;
