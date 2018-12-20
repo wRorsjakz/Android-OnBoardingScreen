@@ -12,7 +12,7 @@ This article will show you how to implement your own onboarding screen in Androi
 <img src="https://img.shields.io/badge/minSdkVersion-24-red.svg?style=true" alt="minSdkVersion 21" data-canonical-src="https://img.shields.io/badge/minSdkVersion-24-red.svg?style=true" style="max-width:100%;"> <img src=https://img.shields.io/badge/compileSdkVersion-28-brightgreen.svg alt="compileSdkVersion 28" data-canonical-src="https://img.shields.io/badge/compileSdkVersion-27-yellow.svg?style=true" style="max-width:100%;">
 
 ## Onboarding Screen In Action
-
+![](finalSample.gif)
 ## Tutorial
 ### Layout
 
@@ -21,7 +21,7 @@ In the [main xml layout](https://github.com/wRorsjakz/Android-OnBoardingScreen/b
 android:orientation="vertical"
 android:weightSum="100"
 ```
-`weightSum` is useful in ensuring that child views are rendered proportionally to the length of the device screen. 
+`weightSum` is useful in ensuring that child views are rendered proportionally to the length of the device screen.
 
 For child views, declare:
 ```xml
@@ -62,7 +62,7 @@ In another xml file, create the [slide layout](https://github.com/wRorsjakz/Andr
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -110,7 +110,7 @@ private String[] titles = {
         //Add titles
     };
 private String[] descriptions = {
-        //Add descriptions         
+        //Add descriptions
     };
 ```
 Override `getCount()` which returns the number of views available. Instead of hardcoding it, pass the length of one of the array.
@@ -165,7 +165,7 @@ To show the dots which indicates the total number of slides and index of current
 int noOfSlides = adapter.getCount();
 TextView[] dots = new TextView[noOfSlides];
 ```
-Populate the array with the dots using HTML. 
+Populate the array with the dots using HTML.
 _Note: Min api for `public static Spanned fromHtml (String source, int flags)` is 24._
 ```java
 for (int i = 0; i < noOfSlides; i++){
